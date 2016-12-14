@@ -1,0 +1,111 @@
+<div class="container" style="height:100%;">
+    <div class="row NPMRDS-page-title" style="margin: 10% 0px 100px 0px"></div>
+    <div class='row'>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="panel panel-primary">
+                <header style="text-align:center;background-color:#fff;">
+                     <legend style="padding:25px;line-height:20px">AVAIL Login</legend>
+                    <h4 style="margin-bottom:0px;">Login to your account</h4>
+                </header>
+                <form action="/login/auth" method="POST" class="form-signin">
+                    <fieldset>
+                        <div class="panel-body" style="background-color:#fff">
+                            <% if(flash && flash.err) { %>
+                                <% Object.keys(flash.err).forEach(function(error) { %>
+                                        <div class="alert alert-warning"><%- flash.err[error].message %></div>
+                                <% }) %>
+                            <% } %>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <label class="input-group-addon" for="loginName">
+                                        
+                                    </label>
+                                    <input style="font-size:14px; padding:15px;" id="loginName" name="loginName" type="text"
+                                        class="form-control input-lg"  placeholder="Username"
+                                        required/>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <label class="input-group-addon" for="password">
+                                       
+                                    </label>
+                                    <input style="font-size:14px; padding:15px;" id="password" name="password" type="password"
+                                        class="form-control input-lg" placeholder="Password"
+                                        required/>
+                                </div>
+                            </div>
+
+
+                            <a class="link" onclick="showModal('passwordModal')">
+                                Forgot your password?
+                            </a>
+                            <a class="link pull-right" href="/signup">
+                                Sign up
+                            </a>
+                        </div>
+                        <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+                    </fieldset>
+                    <div class="panel-footer" id="login-footer">
+                        <button type="submit" class="btn btn-block btn-lg btn-danger">
+                            <span class="small-circle"><i class="fa fa-caret-right"></i></span>
+                            Sign In
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="passwordModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form action="/password/reset" method="POST" class="form-signin">
+                <fieldset>
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Password Reset</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="email">E-Mail:</label>
+                            <input class="form-control "type="email" id="email" name="email" required/>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-danger">Submit</button>
+                    </div>
+
+                </fieldset>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<style>
+    .link {
+        cursor: pointer;
+    }
+</style>
+
+<script>
+
+    window.onload = function() {
+        $("#loginName").focus();
+    }
+
+    function showModal(option) {
+        $(("#"+option)).modal();
+    }
+
+</script>

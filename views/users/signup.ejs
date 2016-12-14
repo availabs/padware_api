@@ -1,0 +1,88 @@
+<div class="container" style="height:100%;">
+    <div class="row NPMRDS-page-title" style="margin: 10% 0px 100px 0px"></div>
+    <div class='row'>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="panel panel-primary">
+                <header style="text-align:center;background-color:#fff;">
+                     <legend style="padding:25px;line-height:20px">AVAIL Account Creation</legend>
+                    <h4 style="margin-bottom:0px;">Create an account</h4>
+                </header>
+                <form action="/signup/auth" method="POST" class="form-signin">
+                    <fieldset>
+                        <div class="panel-body" style="background-color:#fff">
+                            <% if(flash && flash.err) { %>
+                                <% Object.keys(flash.err).forEach(function(error) { %>
+                                        <div class="alert alert-warning"><%- flash.err[error].message %></div>
+                                <% }) %>
+                            <% } %>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <label class="input-group-addon" for="email">
+                                        
+                                    </label>
+                                    <input style="font-size:14px; padding:15px;" id="email" name="email" type="email"
+                                        class="form-control input-lg"  placeholder="E-Mail"
+                                        required/>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <label class="input-group-addon" for="password">
+                                       
+                                    </label>
+                                    <input style="font-size:14px; padding:15px;" id="password" name="password" type="password"
+                                        class="form-control input-lg" placeholder="Password"
+                                        required/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <label class="input-group-addon" for="confirmpassword">
+                                       
+                                    </label>
+                                    <input style="font-size:14px; padding:15px;" id="confirmpassword" name="confirmpassword" type="password"
+                                        class="form-control input-lg" placeholder="Confirm Password"
+                                        required/>
+                                </div>
+                            </div>
+
+                            <a class="link" href="/login">
+                                Already have an account?
+                            </a>
+                        </div>
+                        <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+                    </fieldset>
+                    <div class="panel-footer" id="login-footer">
+                        <button type="submit" class="btn btn-block btn-lg btn-success">
+                            <span class="small-circle"><i class="fa fa-caret-right"></i></span>
+                            Create Account
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .link {
+        cursor: pointer;
+    }
+</style>
+
+<script>
+
+    window.onload = function() {
+        $("#email").focus();
+    }
+
+    function showModal(option) {
+        $(("#"+option)).modal();
+    }
+
+</script>
