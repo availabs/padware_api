@@ -34,69 +34,7 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  },
-
-  '/sendmail' : {
-    controller: 'MailController',
-    action: 'send',
-    cors: '*'
-  },
-  /* Login */
-  '/login': 'UsersController.login',
-  '/login/auth': {
-    controller: 'UsersController',
-    action: 'Auth',
-    cors: '*'
-  },
-
-  /* Logout */
-  '/logout': {
-    controller: 'UsersController',
-    action: 'logout',
-    cors: '*'
-  },
-
-  '/checkauth': {
-    controller: 'UsersController',
-    action: 'checkauth',
-    cors: '*'
-  },
-
-  /*Lost Password/E-Mail */
-  '/password/reset': 'UsersController.passwordReset',
-
-  /* New User */
-  '/signup' : 'UsersController.signup',
-  '/signup/auth': {
-    controller: 'UsersController',
-    action: 'signupAuth',
-    cors: '*'
-  },
-
-  /* Admin Panel Stuff */
-  '/groups' : {
-    controller: 'UserGroupController',
-    action: 'groups',
-    cors: '*'
-  },
-
-  '/usergroup' : {
-    cors:'*'
-  },
-
-  '/users' : {
-    cors:'*'
-  },
-
-  '/usergroup/:id' : {
-    cors:'*'
-  },
-
-  '/users/:id' : {
-    cors:'*'
-  },
-
-  // '/users/:id?': 'UsersController.getUser',
+  }
 
   /***************************************************************************
   *                                                                          *

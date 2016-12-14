@@ -27,26 +27,7 @@ module.exports.policies = {
   ***************************************************************************/
 
   // '*': true,
-  '*': ["flash","sessionAuth"],
-  Users: {
-    '*' : true, //MUST CHANGE TO AUTHORIZED
-    'login': "flash",
-    'logout':["flash"],
-    'checkAuth':["flash"],
-    'signup': "flash",
-    'auth': "flash",
-    'signupAuth':"flash",
-    'passwordReset': true
-  },
-  Mail:{
-    '*' : true
-  },
-  UserGroup: {
-    '*' : true //MUST CHANGE TO AUTHORIZED
-  },
-  Landing:{
-    'index': "flash"
-  }
+  '*': true
   /***************************************************************************
   *                                                                          *
   * Here's an example of mapping some policies to run before a controller    *
