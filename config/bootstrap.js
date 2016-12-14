@@ -99,7 +99,7 @@ function createNewPages(cb) {
       {
         "name":"continuouscounts",
         "label":"Continuous Counts",
-        "category_id":2,
+        "category_id":3,
         "sub_header":"",
         "image_path":"/assets/images/npmrds3.jpg",
         "description":"description_0 paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc gravida odio vitae blandit euismod. Sed sodales feugiat est, eu commodo est pretium sed. Morbi sed rutrum velit. Aenean at porta urna. Sed sem eros, dapibus id pharetra a, consectetur sagittis ante. Donec quis ex odio. Etiam et felis eget enim.",
@@ -108,7 +108,7 @@ function createNewPages(cb) {
       {
         "name":"npmrds",
         "label":"NPMRDS",
-        "category_id":2,
+        "category_id":3,
         "sub_header":"",
         "image_path":"/assets/images/npmrds3.jpg",
         "description":"description_0 paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc gravida odio vitae blandit euismod. Sed sodales feugiat est, eu commodo est pretium sed. Morbi sed rutrum velit. Aenean at porta urna. Sed sem eros, dapibus id pharetra a, consectetur sagittis ante. Donec quis ex odio. Etiam et felis eget enim.",
