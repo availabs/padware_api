@@ -34,8 +34,17 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
+  },
+  'get /categories': {
+    cors: {
+      origin: '*'
+    }
+  },
+  'get /pages': {
+    cors: {
+      origin: '*'
+    }
   }
-
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
