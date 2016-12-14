@@ -79,7 +79,7 @@ module.exports.connections = {
     host: 'lor.availabs.org',//169.226.142.154'
     user: 'postgres',
     password: 'transit',
-    database: 'avail_auth'
+    database: 'padware'
   }
 
 
