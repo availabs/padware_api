@@ -44,6 +44,10 @@ module.exports = {
       type: 'string',
       required: false
     },
+    "auth_required": {
+      type: 'string',
+      required: false
+    },
     toJSON: function() {
         var obj = this.toObject();
         delete obj.password;
